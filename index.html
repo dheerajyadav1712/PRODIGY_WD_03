@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-Tac-Toe AI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to Ultimate Tic-Tac-Toe AI</h1>
+    </header>
+    <div id="congratsOverlay">
+        <div id="congratsMessage"></div>
+    </div>
+    
+    
+
+    <button onclick="setMode('multiplayer')">Multiplayer</button>
+    <button onclick="setMode('ai')">Play with AI</button>
+    
+    <div id="aiLevels" class="hidden">
+        <button onclick="setDifficulty('easy')">Easy</button>
+        <button onclick="setDifficulty('medium')">Medium</button>
+        <button onclick="setDifficulty('hard')">Hard</button>
+    </div>
+
+    <h2 id="selectedMode">Choose Mode to Start</h2>
+    <div class="board" id="board"></div>
+    <h2 id="status"></h2>
+    <button onclick="resetGame()">Restart Game</button>
+    
+    <footer>
+        <p>&copy; 2025 Tic-Tac-Toe AI | Developed by Dheeraj Yadav</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

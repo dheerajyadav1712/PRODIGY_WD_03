@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body {
+    text-align: center;
+    font-family: 'Press Start 2P', cursive;
+    background: radial-gradient(circle, #1a1a2e, #16213e);
+    color: cyan;
+    animation: backgroundAnimation 10s infinite alternate;
+}
+
+@keyframes backgroundAnimation {
+    0% { background-color: #0f3460; }
+    100% { background-color: #1a1a2e; }
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 120px);
+    grid-template-rows: repeat(3, 120px);
+    gap: 5px;
+    justify-content: center;
+    margin: 20px auto;
+}
+
+.cell {
+    width: 120px;
+    height: 120px;
+    background: linear-gradient(135deg, #222, #444);
+    border: 2px solid cyan;
+    font-size: 2.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: cyan;
+    transition: 0.3s;
+}
+
+.cell:hover { background: linear-gradient(135deg, #444, #666); }
+.hidden { display: none; }
+
+header, footer {
+    padding: 20px;
+    background: linear-gradient(90deg, #0f3460, #16213e);
+    color: white;
+    font-size: 1.5em;
+    text-shadow: 2px 2px 5px black;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px cyan;
+}
+
+button {
+    padding: 12px 25px;
+    margin: 10px;
+    font-size: 1.2em;
+    font-family: 'Press Start 2P', cursive;
+    color: white;
+    background: linear-gradient(90deg, #ff00ff, #ff6600);
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 12px;
+    box-shadow: 0px 0px 10px rgba(255, 0, 255, 0.7);
+}
+
+button:hover {
+    background: linear-gradient(90deg, #ff6600, #ff00ff);
+    transform: scale(1.1);
+    box-shadow: 0px 0px 15px rgba(255, 102, 0, 0.9);
+}
+#congratsOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+    z-index: 1000;
+}
+
+/* Emoji Shower */
+.emoji {
+    position: absolute;
+    top: -10vh; /* Start from the top */
+    font-size: 2.5rem;
+    animation: emojiFall linear forwards;
+    z-index: 1003; /* Emojis on top */
+}
+
+@keyframes emojiFall {
+    0% { transform: translateY(0vh) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+}
+
+/* Party Poppers */
+.popper {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: url('https://i.imgur.com/4O8QG5l.png') no-repeat center;
+    background-size: contain;
+    animation: popAnimation 1s ease-out;
+    z-index: 1004;
+}
+
+@keyframes popAnimation {
+    0% { transform: scale(0.5); opacity: 1; }
+    50% { transform: scale(1.5); opacity: 1; }
+    100% { transform: scale(2); opacity: 0; }
+}
